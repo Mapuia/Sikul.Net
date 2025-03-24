@@ -1,0 +1,30 @@
+<Window x:Class="Sikul.CreateAcademicYearWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Create Academic Year" Height="250" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Year:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="YearTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Start Date:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <DatePicker x:Name="StartDatePicker" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <Label Content="End Date:" Grid.Row="2" Grid.Column="0" Margin="5"/>
+        <DatePicker x:Name="EndDatePicker" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <Button x:Name="CreateButton" Content="Create" Grid.Row="3" Grid.Column="1" Margin="5" Click="CreateButton_Click" Width="100" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
