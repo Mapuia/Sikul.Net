@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sikul")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88766d49cf3be012cdf56dff39da34c5428093fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("sikul")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sikul")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

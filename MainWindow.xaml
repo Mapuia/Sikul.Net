@@ -15,8 +15,8 @@
                 <Setter Property="Background" Value="Transparent" />
                 
                 <Setter Property="BorderThickness" Value="0" />
-                <Setter Property="Padding" Value="20" />
-                <Setter Property="Margin" Value="10" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Margin" Value="10 5" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="FontFamily" Value="Segoe UI" />
                 <Setter Property="Template">
@@ -59,9 +59,25 @@
                 <Setter Property="BorderThickness" Value="1" />
                 <Setter Property="BorderBrush" Value="#DDDDDD" />
             </Style>
+                <Style TargetType="TreeView">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="BorderBrush" Value="Gray" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+            <Style TargetType="TreeViewItem">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Foreground" Value="DarkBlue" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Background" Value="White"/>
+                
+            
+              
+            </Style>
 
         </ResourceDictionary>
     </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -80,11 +96,13 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Calvary High School" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Foreground="White"/>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Student Entry" Click="StudentEntryButton_Click" />
-                    <Button Content="Result Generation" Click="ResultGenerationButton_Click" />
-                    <Button Content="Report Card" Click="ReportCardGeneration_Click" />
-                    <Button Content="Management" Click="ManagementButton_Click" />
-                    <Button Content="View Reports" Click="ViewPreviousReportsButton_Click" />
+                    <Button Content="Admission" Click="StudentEntryButton_Click" />
+                    <Button Content="Exams" Click="ResultGenerationButton_Click" />
+                    <Button Content="Result" Click="ReportCardGeneration_Click" />
+                    <Button Content="Report Card" Click="ManagementButton_Click" />
+                    <Button Content="Statistics" Click="ViewPreviousReportsButton_Click" />
+                    <Button Content="Logout" Click="LogoutButton_Click"  />
+                    
                 </StackPanel>
             </Grid>
         </Border>
@@ -95,19 +113,23 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <StackPanel x:Name="VerticalMenu" Grid.Row="0">
-                <Button Content="Manage Subjects" Foreground="{StaticResource PrimaryColor}" />
-                <Button Content="Manage Class" Foreground="{StaticResource PrimaryColor}" />
-                <Button Content="Manage Exams" Foreground="{StaticResource PrimaryColor}" />
-                <Button Content="Evaluation Criteria" Foreground="{StaticResource PrimaryColor}" />
-                <Button Content="Create Academic Year" Foreground="{StaticResource PrimaryColor}" />
-                
-            </StackPanel>
-            <Button Content="Logout" Click="LogoutButton_Click" Grid.Row="1" Foreground="{StaticResource PrimaryColor}"/>
+                <TreeView>
+                    <TreeViewItem Header="Manage" Padding="10">
+                        <TreeViewItem Header="Students" Padding="10" />
+                        <TreeViewItem Header="Class" Padding="10"/>
+                        <TreeViewItem Header="Subjects" Padding="10"/>
+                        <TreeViewItem Header="Academic Year" Padding="10"/>                  
+                    </TreeViewItem>                
+                </TreeView>       
+
+            </StackPanel>                        
+         
+            <Button Content="Settings"  Grid.Row="1" Foreground="{StaticResource PrimaryColor}"/>
         </Grid>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="AcademicYearTextBlock" />
-            <TextBlock Text="Main Application" FontSize="28" FontWeight="Bold" Margin="0,0,0,30" HorizontalAlignment="Center" />
+            <TextBlock Text="Calvary High School" FontSize="28" FontWeight="Bold" Margin="0,0,0,30" HorizontalAlignment="Center" />
         </StackPanel>
-    </Grid>
+        </Grid>
 </Window>

@@ -32,14 +32,26 @@ CREATE TABLE Students (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
     Name TEXT NOT NULL,
     Guardian TEXT,
-    ClassId INTEGER,
-    SectionId INTEGER,
-    RollNo INTEGER,
     DOB DATE,
     Aadhaar TEXT,
     APAR TEXT,
-    AcademicYearId INTEGER,
+    Address TEXT,
     UserId INTEGER,
+    AdmissionYear INT,
+    Creation_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Modified_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
+);
+
+-- Admission Table
+CREATE TABLE Admission (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    StudentId INTEGER NOT NULL,
+    AcademicYearId INTEGER,
+    ClassId INTEGER,
+    SectionId INTEGER,
+    RollNo INTEGER,
+    UserId INTEGER,   
     Creation_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     Modified_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ClassId) REFERENCES Classes(Id),
@@ -60,9 +72,7 @@ CREATE TABLE ExamTypes (
 CREATE TABLE Subjects (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
     SubjectName TEXT NOT NULL UNIQUE,
-    SubjectCategory TEXT,
-    ClassId INTEGER,
-    FOREIGN KEY (ClassId) REFERENCES Classes(Id)
+    SubjectCategory TEXT
 );
 
 -- Marks Table
@@ -96,6 +106,7 @@ CREATE TABLE Results (
     Creation_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     Modified_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     Rank INTEGER,
+    ResultStatus TEXT,
     FOREIGN KEY (StudentId) REFERENCES Students(Id),
     FOREIGN KEY (AcademicYearId) REFERENCES AcademicYears(Id),
     FOREIGN KEY (UserId) REFERENCES Users(Id)
@@ -134,6 +145,6 @@ CREATE TABLE Settings (
     PassMarkPercentage REAL,
     GradeEvaluationCriteria TEXT, -- JSON or XML data
     DivisionCriteria TEXT, -- JSON or XML data
-    CurrentAcademicYearId INTEGER,
+    CurrentAcademicYearId INTEGER NOT NULL,
     FOREIGN KEY (CurrentAcademicYearId) REFERENCES AcademicYears(Id)
 );

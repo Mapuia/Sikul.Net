@@ -2,6 +2,8 @@
 using System.Data.SQLite;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace Sikul
 {
@@ -124,7 +126,7 @@ namespace Sikul
             {
                 AcademicYearTextBlock.Text = "Academic Year: Not Set";
             }
-        }
+        }         
 
         private void CreateAcademicYear_Click(object sender, RoutedEventArgs e)
         {

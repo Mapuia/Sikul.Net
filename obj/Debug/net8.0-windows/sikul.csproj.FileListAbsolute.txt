@@ -38,3 +38,4 @@ C:\Sikul\obj\Debug\net8.0-windows\refint\sikul.dll
 C:\Sikul\obj\Debug\net8.0-windows\sikul.pdb
 C:\Sikul\obj\Debug\net8.0-windows\sikul.genruntimeconfig.cache
 C:\Sikul\obj\Debug\net8.0-windows\ref\sikul.dll
+C:\Sikul\obj\Debug\net8.0-windows\sikul.sourcelink.json
